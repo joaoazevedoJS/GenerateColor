@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blocks {
+    width: 19.9%;
+    height: 20%;
+    line-height: 50px;
+    text-align: center;
+    margin-top: 1px;
+    margin-right: 1px;
+    font-weight: bold;
+    text-shadow: 0px 0px 25px #000000;
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 700px) {
+    .blocks {
+        width: 20%;
+        height: 20%;
+        line-height: 50px;
+        text-align: center;
+        margin-right: 0px;
+    }
+}
