@@ -30,12 +30,20 @@ function gerarCor(indice) {
     return arrayColor[indice]
 }
 
-(function () {
+function blocks() {
+    const num = document.getElementById("colorGenerator")
+    const container = document.querySelector('main.container');
     const arrayColor = []
     
-    const container = document.querySelector('div.container');
+    if(num.value > 250) {
+        alert(`Ultrapassou o número maximo! '${num.value}' agora é 250! `)
+        num.value = 250
+    }
+    
+    
+    container.innerHTML = "";
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < num.value; i++) {
 
         arrayColor.push(gerarCor(0), gerarCor(1), gerarCor(2))
     }
@@ -43,6 +51,34 @@ function gerarCor(indice) {
     arrayColor.sort()
 
     for (let i in arrayColor) {
-        container.innerHTML += `<div class="blocks" style="background: ${arrayColor[i]}">${arrayColor[i]}</div>`;
+        container.innerHTML += `<div class="blocks" onclick="copyText(this)" style="background: ${arrayColor[i]}">${arrayColor[i]}</div>`;
     }
-})()
+}
+
+function copyText(copyDiv) {
+    const element = document.createElement('input');
+
+    element.value = copyDiv.textContent;
+    document.body.appendChild(element);
+
+    element.select();
+    document.execCommand('copy');
+
+    document.body.removeChild(element);
+
+    copiedText()
+}
+
+function copiedText() {
+    const copieds = document.querySelector('div.container-copied-text')
+    
+    const copiedText = document.createElement('div')
+    
+    copiedText.innerText = "Copiado!"
+    copiedText.setAttribute('class', 'copied')
+    copieds.appendChild(copiedText)
+
+    setTimeout(function() {
+        return copieds.removeChild(copiedText)
+    }, 1500)
+}

@@ -1,32 +1,102 @@
+/* GLOBAL */
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: 0;
+    box-sizing: border-box;
 }
 
-.container {
+body {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100vh;
+
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+/* TITLES */
+
+h1 {
+    font-weight: 300;
+    font-size: 150%;
+    margin-right: 70px;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: center;
+
+    background: #f7f7f7;
+    box-shadow: 1px 2px 5px #333;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+input#colorGenerator, header input[type="submit"] {
+    border: 1px solid #aaaaaaaf;
+}
+
+header input#colorGenerator {
+    text-align: center;
+    width: 250px;
+    padding: 10px 0;
+}
+
+header input[type="submit"] {
+    margin-left: 10px;
+    padding: 10px 25px;
+    background: linear-gradient(to left bottom, rgba(42, 66, 245, 0.63), rgba(34, 255, 34, 0.575));
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+
+/* MAIN */
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1px;
 }
 
 .blocks {
-    width: 19.9%;
-    height: 20%;
-    line-height: 50px;
-    text-align: center;
-    margin-top: 1px;
-    margin-right: 1px;
+    width: 100%;
+    padding: 15px 25px;
     font-weight: bold;
     text-shadow: 0px 0px 25px #000000;
-    color: #ffffff;
+    color: #fff;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid #ddd;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+}
+
+/* JS */
+
+.container-copied-text {
+    position: fixed;
+    top: 3px;
+    right: 1px;
+}
+
+.copied {
+    background: rgba(30, 253, 30, 0.8);
+    padding: 15px 20px;
+    margin-bottom: 2px;
 }
 
 @media only screen and (max-width: 700px) {
-    .blocks {
-        width: 20%;
-        height: 20%;
-        line-height: 50px;
-        text-align: center;
-        margin-right: 0px;
+    .container {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
