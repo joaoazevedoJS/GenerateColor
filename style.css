@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -14,13 +14,18 @@ body {
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
     color: rgba(0, 0, 0, 0.9);
+    background: #f9f9f9;
+}
+
+header, footer {
+    background: #f7f7f7;
 }
 
 /* TITLES */
 
 h1 {
     font-weight: 300;
-    font-size: 150%;
+    font-size: 140%;
     margin-right: 70px;
 }
 
@@ -29,11 +34,12 @@ h1 {
 header {
     display: flex;
     justify-content: center;
-
-    background: #f7f7f7;
+    align-items: center;
+    
     box-shadow: 1px 2px 5px #333;
     padding: 10px;
     margin-bottom: 5px;
+    width: 100%;
 }
 
 input#colorGenerator, header input[type="submit"] {
@@ -42,7 +48,7 @@ input#colorGenerator, header input[type="submit"] {
 
 header input#colorGenerator {
     text-align: center;
-    width: 250px;
+    width: 150px;
     padding: 10px 0;
 }
 
@@ -68,9 +74,10 @@ header input[type="submit"] {
     width: 100%;
     padding: 15px 25px;
     font-weight: bold;
-    text-shadow: 0px 0px 25px #000000;
+    text-shadow: 0px 0px 25px hsla(0, 0%, 0%, 0.5);
     color: #fff;
     text-align: center;
+    cursor: pointer;
 }
 
 /* Footer */
@@ -95,8 +102,55 @@ footer {
     margin-bottom: 2px;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1030px) {
+    /* Title */
+    h1 {
+        font-size: 120%;
+    }
+
+    /* Main */
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    /* Title */
+    h1 {
+        font-size: 100%;
+        margin-right: 40px;
+    }
+
+    /* Header */
+    header input#colorGenerator {
+        width: 100px;
+    }
+
+    header input[type="submit"] {
+        padding: 10px 15px;
+    }
+
+
+    /* Main */
     .container {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    /* Title */
+    h1 {
+        font-size: 80%;
+        margin-right: 30px;
+    }
+
+    /* Header */
+    header input#colorGenerator {
+        width: 70px;
+    }
+
+    /* Main */
+    .container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

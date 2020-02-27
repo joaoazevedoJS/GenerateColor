@@ -7,8 +7,8 @@ Um gerador que facilita na seleção de cores para a sua aplicação!
 
 ## O que você pode fazer
 
-- [x] Gerar 250 cores (rgb 1, rba 2, rgba);
-- [x] Mudar a cores sem precisar do Crtl + R ou f5;
+- [x] Gerar ~~250~~ 5000 cores diferentes (rgb 1, rgb 2, rgba);
+- [x] Mudar a cores com apenas um clique;
 - [x] Copiar cores ao clicar nelas;
 
 [license]: https://img.shields.io/github/license/joaoazevedoJS/GeradorDeCores
