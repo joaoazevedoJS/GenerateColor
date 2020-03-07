@@ -1,20 +1,25 @@
+document.getElementById("colorGenerator").addEventListener('keypress', e => {
+    if(e.code == 'Enter') {
+        blocks()
+    }
+})
+
+document.getElementById("newColor").addEventListener("click", blocks)
+
 function gerarCor() {
     const hexadecimais = "0123456789ABCDEF";
 
     let color = "#";
     let num;
 
-    // Vai escolher se vai ser rgb 1 ou rgb 2 ou rgba
+    // Vai escolher se vai ser rgb 1 ou rgb 2
 
-    switch (Math.floor(Math.random() * 3)) {
+    switch (Math.floor(Math.random() * 2)) {
         case 0:
             num = 3;
             break;
         case 1:
             num = 6;
-            break;
-        case 2:
-            num = 8;
             break;
     }
 
@@ -44,12 +49,13 @@ function blocks() {
     for (let i = 0; i < num.value; i++) {
         const color = gerarCor()
 
-        colorRepeated(color, arrayColor) == true ? i-- : arrayColor.push(color)
+        // vai verificar se tem alguma cor repitida
+        arrayColor.indexOf(color) != -1 ? i-- : arrayColor.push(color)
     }
 
     // organizar a cores
 
-    arrayColor.sort()
+    arrayColor.sort((a, b) => a.length - b.length)
 
     // vai criar uma div com a cor gerada, para cada elemento do array
 
@@ -63,16 +69,6 @@ function blocks() {
         blocks.onclick = () => copyText(color);
         container.appendChild(blocks)
     })
-}
-
-// vai verificar se tem alguma cor repitida
-
-function colorRepeated(color, array) {
-    for (let i in array) {
-        if (color == array[i]) {
-            return true
-        }
-    }
 }
 
 function copyText(color) {

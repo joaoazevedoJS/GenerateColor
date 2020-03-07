@@ -15,6 +15,7 @@ html, body {
     font-family: 'Roboto', sans-serif;
     color: rgba(0, 0, 0, 0.9);
     background: #f9f9f9;
+    overflow-x: hidden;
 }
 
 header, footer {
@@ -42,7 +43,7 @@ header {
     width: 100%;
 }
 
-input#colorGenerator, header input[type="submit"] {
+input#colorGenerator, header input#newColor {
     border: 1px solid #aaaaaaaf;
 }
 
@@ -52,7 +53,7 @@ header input#colorGenerator {
     padding: 10px 0;
 }
 
-header input[type="submit"] {
+header input#newColor {
     margin-left: 10px;
     padding: 10px 25px;
     background: linear-gradient(to left bottom, rgba(42, 66, 245, 0.63), rgba(34, 255, 34, 0.575));
@@ -78,6 +79,11 @@ header input[type="submit"] {
     color: #fff;
     text-align: center;
     cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.blocks:hover {
+    transform: scale(1.5);
 }
 
 /* Footer */
@@ -126,7 +132,7 @@ footer {
         width: 100px;
     }
 
-    header input[type="submit"] {
+    header input#newColor {
         padding: 10px 15px;
     }
 

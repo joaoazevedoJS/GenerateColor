@@ -7,7 +7,7 @@ Um gerador que facilita na seleção de cores para a sua aplicação!
 
 ## O que você pode fazer
 
-- [x] Gerar ~~250~~ 5000 cores diferentes (rgb 1, rgb 2, rgba);
+- [x] Gerar 5000 cores diferentes (rgb 1 e rgb 2);
 - [x] Mudar a cores com apenas um clique;
 - [x] Copiar cores ao clicar nelas;
 
