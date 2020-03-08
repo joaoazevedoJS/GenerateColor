@@ -1,0 +1,52 @@
+@media only screen and (max-width: 1030px) {
+    /* Title */
+    h1 {
+        font-size: 120%;
+    }
+
+    /* Main */
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    /* Title */
+    h1 {
+        font-size: 100%;
+        margin-right: 40px;
+    }
+
+    /* Header */
+    header input#colorGenerator {
+        width: 100px;
+    }
+
+    header input#newColor {
+        padding: 10px 15px;
+    }
+
+
+    /* Main */
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    /* Title */
+    h1 {
+        font-size: 80%;
+        margin-right: 30px;
+    }
+
+    /* Header */
+    header input#colorGenerator {
+        width: 70px;
+    }
+
+    /* Main */
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

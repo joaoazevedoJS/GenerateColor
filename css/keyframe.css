@@ -1,0 +1,4 @@
+@keyframes copiedMove {
+    from { right: -100px; }
+    to { right: 10px; }
+}
