@@ -103,6 +103,8 @@ footer {
 }
 
 .copied {
+    width: 200px;
+    text-align: center;
     position: relative;
     background: linear-gradient(to top right,rgba(0, 255, 119, 0.8), rgba(17, 135, 238, 0.8)); 
     padding: 10px 25px;
